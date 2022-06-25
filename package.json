@@ -7,9 +7,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "2.2.1",
+    "@emotion/react": "11.9.3",
+    "@emotion/styled": "11.9.3",
+    "@next/mdx": "12.1.6",
+    "autoprefixer": "10.4.7",
+    "daisyui": "2.17.0",
+    "framer-motion": "6.3.15",
     "next": "12.1.4",
+    "postcss": "8.4.14",
     "react": "18.0.0",
-    "react-dom": "18.0.0"
+    "react-dom": "18.0.0",
+    "react-icons": "4.4.0",
+    "react-scroll": "1.8.7",
+    "remark-breaks": "3.0.2",
+    "remark-gfm": "3.0.1",
+    "tailwindcss": "3.1.4",
+    "twemoji": "14.0.2"
   },
   "devDependencies": {
     "eslint": "8.12.0",
