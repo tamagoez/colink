@@ -13,7 +13,7 @@ export default function Index() {
             <p className="py-6">
               A simple service to devote Link and Corpolate to your groups.
               <br />
-              Going to serve Chat, Forum, "@ You"!
+              Going to serve Chat, Forum, &quot;@ You&quot;!
             </p>
             <div className="flex">
               <button className="btn btn-primary">Login</button>
