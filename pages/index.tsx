@@ -10,8 +10,16 @@ export default function Index() {
           />
           <div>
             <h1 className="text-5xl font-bold">Colink</h1>
-            <p className="py-6">To devote Link and Corpolate.</p>
-            <button className="btn btn-primary">Get Started</button>
+            <p className="py-6">
+              A simple service to devote Link and Corpolate to your groups.
+              <br />
+              Going to serve Chat, Forum, "@ You"!
+            </p>
+            <div className="flex">
+              <button className="btn btn-primary">Login</button>
+              <p className="divider divider-horizontal" />
+              <button className="btn bgn-secondary">or Signup</button>
+            </div>
           </div>
         </div>
       </div>
