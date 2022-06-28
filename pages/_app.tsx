@@ -6,11 +6,15 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter();
   const address = router.pathname;
   console.log(address);
-  if (
-    address === "/" ||
-    address === "/_error" ||
-    localStorage.getItem("permit") === "true"
-  ) {
+  let enableaccess = false;
+  if (typeof window === "undefined") {
+    enableaccess = true;
+  } else {
+    if (address === "/" || address === "/_error") {
+      enableaccess = true;
+    }
+  }
+  if (enableaccess) {
     return (
       <>
         <ChakraProvider>
