@@ -10,7 +10,11 @@ function MyApp({ Component, pageProps }) {
   if (typeof window === "undefined") {
     enableaccess = true;
   } else {
-    if (address === "/" || address === "/_error") {
+    if (
+      address === "/" ||
+      address === "/_error" ||
+      localStorage.getItem("permit_access") === "true"
+    ) {
       enableaccess = true;
     }
   }
