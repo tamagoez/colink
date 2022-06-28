@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Index() {
   return (
     <>
@@ -16,7 +18,9 @@ export default function Index() {
               Going to serve Chat, Forum, &quot;@ You&quot;!
             </p>
             <div className="flex">
-              <button className="btn btn-primary">Login</button>
+              <Link href="/login" passHref>
+                <a className="btn btn-primary">Login</a>
+              </Link>
               <p className="divider divider-horizontal" />
               <button className="btn bgn-secondary">or Signup</button>
             </div>
