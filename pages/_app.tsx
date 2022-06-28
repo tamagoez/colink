@@ -24,7 +24,9 @@ function MyApp({ Component, pageProps }) {
       <>
         <NavBar />
         <ChakraProvider>
-          <Component {...pageProps} />
+          <div className="ml-1">
+            <Component {...pageProps} />
+          </div>
         </ChakraProvider>
       </>
     );
