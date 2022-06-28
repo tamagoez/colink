@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/router";
+import NavBar from "../components/NavBar";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
   if (enableaccess) {
     return (
       <>
+        <NavBar />
         <ChakraProvider>
           <Component {...pageProps} />
         </ChakraProvider>
@@ -30,6 +32,7 @@ function MyApp({ Component, pageProps }) {
     console.info("forbitten");
     return (
       <>
+        <NavBar />
         <h1>現在開発中のためアクセスできません!</h1>
       </>
     );

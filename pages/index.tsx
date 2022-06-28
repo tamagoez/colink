@@ -18,11 +18,13 @@ export default function Index() {
               Going to serve Chat, Forum, &quot;@ You&quot;!
             </p>
             <div className="flex">
-              <Link href="/login" passHref>
+              <Link href="/account/login" passHref>
                 <a className="btn btn-primary">Login</a>
               </Link>
               <p className="divider divider-horizontal" />
-              <button className="btn bgn-secondary">or Signup</button>
+              <Link href="/account/login" passHref>
+                <a className="btn btn-secondary">or Signup</a>
+              </Link>
             </div>
           </div>
         </div>
