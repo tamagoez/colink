@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { LoginCheck } from "../lib/supabaseFunc";
 
 export default function Index() {
+  const router = useRouter();
+  if (LoginCheck()) {
+    router.push("/dashboard");
+  }
   return (
     <>
       <div className="hero min-h-screen bg-base-200">

@@ -47,7 +47,7 @@ export default function NavBar() {
           </div>
         </div>
         <div className="flex-1 pl-2">
-          <Link href="/dashboard" passHref>
+          <Link href="/" passHref>
             <a className="btn btn-ghost normal-case text-xl">Colink</a>
           </Link>
         </div>

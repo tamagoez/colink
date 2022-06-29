@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import NavBar from "../components/NavBar";
+import Forbitten from "../components/Forbitten";
+import allowpages from "../files/allowpages.json";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -12,8 +14,7 @@ function MyApp({ Component, pageProps }) {
     enableaccess = true;
   } else {
     if (
-      address === "/" ||
-      address === "/_error" ||
+      allowpages.includes(address) ||
       localStorage.getItem("permit_access") === "true"
     ) {
       enableaccess = true;
@@ -35,7 +36,9 @@ function MyApp({ Component, pageProps }) {
     return (
       <>
         <NavBar />
-        <h1>現在開発中のためアクセスできません!</h1>
+        <div className="ml-2 mt-4">
+          <Forbitten />
+        </div>
       </>
     );
   }
