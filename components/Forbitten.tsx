@@ -1,8 +1,17 @@
 import Link from "next/link";
-import { LoginCheck } from "../lib/supabaseFunc";
+// import { LoginCheck } from "../lib/supabaseFunc";
 import { IoBan } from "react-icons/io5";
+import { useToast } from "@chakra-ui/react";
 
 export default function Forbitten() {
+  const toast = useToast();
+  toast({
+    title: "Forbitten",
+    description: "You can't access this page on this permission.",
+    status: "error",
+    duration: 9000,
+    isClosable: false
+  });
   return (
     <>
       <p className="text-red-800 text-5xl flex justify-center gap-2">
