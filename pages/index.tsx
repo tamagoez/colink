@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { LoginCheck } from "../lib/supabaseFunc";
+import Meta from "../lib/Meta";
 
 export default function Index() {
   const router = useRouter();
@@ -9,6 +10,10 @@ export default function Index() {
   }
   return (
     <>
+      <Meta
+        title="Colink"
+        description="A simple service to devote Link and Corpolate to your groups."
+      />
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img

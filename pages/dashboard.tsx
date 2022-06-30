@@ -1,8 +1,10 @@
 import Link from "next/link";
+import Meta from "../lib/Meta";
 
 export default function Dashboard() {
   return (
     <>
+      <Meta title="Dashboard" description="Dashboard of Colink App." />
       <div className="card w-96 bg-base-100 shadow-xl hover:brightness-90">
         <Link href="/atmarkyou/" passHref>
           <a>

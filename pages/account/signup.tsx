@@ -3,12 +3,14 @@ import { IoMail } from "react-icons/io5";
 import { MdPassword } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
+import Meta from "../../lib/Meta";
 
 export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
     <>
+      <Meta title="Signup" description="Signup to Colink" />
       <div className="pt-2 form-control w-full h-full flex justify-center items-center">
         <h1 className="font-bold text-3xl pt-1 pb-4">Signup</h1>
         <label className="input-group justify-center w-3/4">
