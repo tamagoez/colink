@@ -38,7 +38,7 @@ export default function SignupPage() {
           className="btn btn-primary w-3/4"
           onClick={() => Signup(email, password)}
         >
-          Login
+          Signup
         </button>
         <p className="pt-1" />
         <Link href="/account/login" passHref>
