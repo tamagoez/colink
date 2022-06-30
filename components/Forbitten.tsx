@@ -14,7 +14,7 @@ export default function Forbitten() {
   });
   return (
     <>
-      <p className="text-red-800 text-5xl flex justify-center gap-2">
+      <p className="text-red-800 text-5xl flex justify-center gap-2 font-bold">
         <IoBan /> Forbitten
       </p>
       <div className="divider" />
