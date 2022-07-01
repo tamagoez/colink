@@ -22,7 +22,7 @@ export async function Signup(email, password) {
     });
     if (error) throw error;
   } catch (error) {
-    ErrorToast("Signup", error);
+    ErrorToast("signup", error.message);
     console.log("error", error);
   }
 }
@@ -32,7 +32,7 @@ export async function Signout() {
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
   } catch (error) {
-    ErrorToast("Signout");
+    ErrorToast("logout", error.message);
     console.log("error", error);
   }
 }

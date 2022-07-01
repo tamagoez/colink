@@ -20,5 +20,5 @@ export default function Toast(
 }
 
 export function ErrorToast(title, info) {
-  Toast(`An error occured on ${title}`, info, "error", 8000, false);
+  Toast(`An error occured on ${title}`, info, "error", 6000, false);
 }
