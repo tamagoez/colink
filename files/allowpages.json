@@ -1,1 +1,8 @@
-["/", "/_error", "/account/login", "/account/signup", "/account/signout"]
+[
+  "/",
+  "/_error",
+  "/account/login",
+  "/account/signup",
+  "/account/signout",
+  "/dashboard"
+]

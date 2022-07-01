@@ -22,3 +22,7 @@ export default function Toast(
 export function ErrorToast(title, info) {
   Toast(`An error occured on ${title}`, info, "error", 6000, false);
 }
+
+export function SuccessToast(title, info) {
+  Toast(`${title} succeed`, info, "success", 6000, true);
+}

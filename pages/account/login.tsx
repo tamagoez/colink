@@ -1,13 +1,20 @@
-import { Login } from "../../lib/supabaseFunc";
+import { Login, LoginCheck } from "../../lib/supabaseFunc";
 import { IoMail } from "react-icons/io5";
 import { MdPassword } from "react-icons/md";
 import { useState } from "react";
 import Link from "next/link";
 import Meta from "../../lib/Meta";
+import { PulseLoader } from "react-spinners";
+import { useRouter } from "next/router";
 
 export default function LoginPage() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  if (LoginCheck()) {
+    router.push("/dashboard");
+  }
   return (
     <>
       <Meta title="Login" description="Login to Colink" />
@@ -43,9 +50,12 @@ export default function LoginPage() {
         <p className="py-4" />
         <button
           className="btn btn-primary w-3/4"
-          onClick={() => Login(email, password)}
+          onClick={() => {
+            Login(email, password);
+            setLoading(true);
+          }}
         >
-          Login
+          {!loading ? "Login" : <PulseLoader size={10} color="#ffffff" />}
         </button>
         <p className="pt-1" />
         <Link href="/account/signup" passHref>

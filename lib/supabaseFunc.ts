@@ -9,8 +9,7 @@ export async function Login(email, password) {
       password: password
     });
     if (error) throw error;
-    // router.push("/dashboard");
-    window.location.replace("/dashboard");
+    window.location.replace("/dashboard?status=auth-success");
   } catch (error) {
     ErrorToast("login", error.message);
     console.log("error", error);
@@ -42,10 +41,29 @@ export async function Signout() {
 
 export function LoginCheck() {
   const user = supabase.auth.user();
-  // console.dir(user);
+  console.dir(user);
   if (user === null) {
     return false;
   } else {
     return true;
   }
 }
+
+export async function FirstCheck() {
+  const user = supabase.auth.user();
+  if (user === null) {
+    return undefined;
+  } else {
+    const { error } = await supabase
+      .from("account")
+      .select("id")
+      .eq("id", user?.id);
+    if (error) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+export function GetUsername(id) {}

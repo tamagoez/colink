@@ -80,7 +80,7 @@ export default function NavBar() {
           <div className="dropdown">{avatar()}</div>
         </div>
         <div className="flex-1 pl-2">
-          <Link href="/" passHref>
+          <Link href={LoginCheck() === true ? "/dashboard" : "/"} passHref>
             <a className="btn btn-ghost normal-case text-xl">Colink</a>
           </Link>
         </div>
