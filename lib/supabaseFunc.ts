@@ -9,7 +9,7 @@ export async function Login(email, password) {
     });
     if (error) throw error;
   } catch (error) {
-    ErrorToast("Login");
+    ErrorToast("login", error.message);
     console.log("error", error);
   }
 }
@@ -22,7 +22,7 @@ export async function Signup(email, password) {
     });
     if (error) throw error;
   } catch (error) {
-    ErrorToast("Signup");
+    ErrorToast("Signup", error);
     console.log("error", error);
   }
 }

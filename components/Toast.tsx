@@ -1,4 +1,6 @@
-import { useToast } from "@chakra-ui/react";
+import { createStandaloneToast } from "@chakra-ui/toast";
+
+const { toast } = createStandaloneToast();
 
 export default function Toast(
   title,
@@ -7,7 +9,7 @@ export default function Toast(
   duration,
   isClosable
 ) {
-  const toast = useToast();
+  // const toast = useToast();
   toast({
     title: title,
     description: description,
@@ -17,12 +19,6 @@ export default function Toast(
   });
 }
 
-export function ErrorToast(title) {
-  Toast(
-    `An error occured on $[title]`,
-    "Please try again",
-    "error",
-    8000,
-    false
-  );
+export function ErrorToast(title, info) {
+  Toast(`An error occured on ${title}`, info, "error", 8000, false);
 }
