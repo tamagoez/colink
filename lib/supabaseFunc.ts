@@ -1,5 +1,6 @@
 import supabase from "./supabaseClient";
 import { ErrorToast } from "../components/Toast";
+// import { useRouter } from "next/router";
 
 export async function Login(email, password) {
   try {
@@ -8,6 +9,8 @@ export async function Login(email, password) {
       password: password
     });
     if (error) throw error;
+    // router.push("/dashboard");
+    window.location.replace("/dashboard");
   } catch (error) {
     ErrorToast("login", error.message);
     console.log("error", error);
@@ -38,5 +41,11 @@ export async function Signout() {
 }
 
 export function LoginCheck() {
-  return false;
+  const user = supabase.auth.user();
+  // console.dir(user);
+  if (user === null) {
+    return false;
+  } else {
+    return true;
+  }
 }

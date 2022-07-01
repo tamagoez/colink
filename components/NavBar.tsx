@@ -38,10 +38,12 @@ export default function NavBar() {
               </Link>
             </li>
             <li>
-              <a>
-                <TbLogout />
-                Logout
-              </a>
+              <Link href="/account/signout" passHref>
+                <a>
+                  <TbLogout />
+                  Logout
+                </a>
+              </Link>
             </li>
           </ul>
         </>
