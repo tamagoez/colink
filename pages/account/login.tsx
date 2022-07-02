@@ -55,7 +55,7 @@ export default function LoginPage() {
             setLoading(true);
           }}
         >
-          {!loading ? "Login" : <PulseLoader size={10} color="#ffffff" />}
+          {!loading ? "Login" : <PulseLoader size={8} color="#ffffff" />}
         </button>
         <p className="pt-1" />
         <Link href="/account/signup" passHref>

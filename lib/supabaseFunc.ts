@@ -1,5 +1,5 @@
 import supabase from "./supabaseClient";
-import { ErrorToast } from "../components/Toast";
+import { ErrorToast, SuccessToast } from "../components/Toast";
 // import { useRouter } from "next/router";
 
 export async function Login(email, password) {
@@ -33,6 +33,7 @@ export async function Signout() {
   try {
     const { error } = await supabase.auth.signOut();
     if (error) throw error;
+    SuccessToast("Logout", "You are logout from your acount.");
   } catch (error) {
     ErrorToast("logout", error.message);
     console.log("error", error);
