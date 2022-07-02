@@ -15,6 +15,10 @@ export default function LoginPage() {
   if (LoginCheck()) {
     router.push("/dashboard");
   }
+  function loginprocess() {
+    setLoading(true);
+    Login(email, password);
+  }
   return (
     <>
       <Meta title="Login" description="Login to Colink" />
@@ -50,10 +54,7 @@ export default function LoginPage() {
         <p className="py-4" />
         <button
           className="btn btn-primary w-3/4"
-          onClick={() => {
-            Login(email, password);
-            setLoading(true);
-          }}
+          onClick={() => loginprocess()}
         >
           {!loading ? "Login" : <PulseLoader size={8} color="#ffffff" />}
         </button>

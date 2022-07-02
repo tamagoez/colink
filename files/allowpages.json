@@ -4,5 +4,6 @@
   "/account/login",
   "/account/signup",
   "/account/signout",
-  "/dashboard"
+  "/dashboard",
+  "/account/initialization"
 ]

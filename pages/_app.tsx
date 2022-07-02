@@ -22,17 +22,17 @@ function MyApp({ Component, pageProps }) {
       enableaccess = true;
     }
   }
-  async function checkfirst() {
-    if (
-      typeof window !== "undefined" &&
-      address !== "/account/initialization" &&
-      (await FirstCheck()) === true &&
-      LoginCheck() === true
-    ) {
-      window.location.replace("/account/initialization");
-    }
+  const firstcheck = (async () => {
+    await FirstCheck();
+  })();
+  if (
+    process.browser &&
+    firstcheck === true &&
+    address !== "/account/initialization" &&
+    address !== "/account/signout"
+  ) {
+    router.push("/account/initialization");
   }
-  checkfirst()
   if (enableaccess) {
     return (
       <>
